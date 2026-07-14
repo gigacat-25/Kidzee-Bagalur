@@ -25,8 +25,20 @@ export const metadata: Metadata = {
     "Playgroup in Bangalore",
     "Nursery Huvinayakanahalli",
     "Zee Learn Preschool Bangalore",
-    "Kidzee Bangalore"
+    "Kidzee Bangalore",
+    "Best Preschool in India",
+    "Best Preschool in Bangalore",
+    "Play School near me",
+    "Pre Nursery School in Bagalur",
+    "Kindergarten in Huvinayakanahalli",
+    "Daycare near KIADB Aerospace Park",
+    "Kidzee Admissions 2026",
+    "Zee Learn Bagalur",
+    "Early childhood education Bagalur"
   ],
+  alternates: {
+    canonical: "https://kidzeekiadbbagalur.com",
+  },
   openGraph: {
     title: "Kidzee KIADB Bagalur | Best Preschool & Day Care in Huvinayakanahalli, Bengaluru",
     description: "Kidzee Preschool KIADB Bagalur (Huvinayakanahalli) offers premium early childhood education, playgroup, nursery, kindergarten, and day care facilities with a 4.9⭐ rating.",
@@ -34,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "Kidzee KIADB Bagalur",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1603354311397-2d5f3848b937?auto=format&fit=crop&w=1200&h=630&q=80",
+        url: "https://kidzeekiadbbagalur.com/images/about_kids.png",
         width: 1200,
         height: 630,
         alt: "Kidzee KIADB Bagalur Preschool",
@@ -42,6 +54,12 @@ export const metadata: Metadata = {
     ],
     locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kidzee KIADB Bagalur | Best Preschool & Day Care in Huvinayakanahalli, Bengaluru",
+    description: "Kidzee Preschool KIADB Bagalur (Huvinayakanahalli) offers premium early childhood education, playgroup, nursery, kindergarten, and day care facilities with a 4.9⭐ rating.",
+    images: ["https://kidzeekiadbbagalur.com/images/about_kids.png"],
   },
   robots: {
     index: true,
@@ -59,10 +77,13 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Preschool",
     "name": "Kidzee KIADB Bagalur",
-    "image": "https://images.unsplash.com/photo-1603354311397-2d5f3848b937?auto=format&fit=crop&w=800&q=80",
+    "image": "https://kidzeekiadbbagalur.com/images/about_kids.png",
+    "logo": "https://kidzeekiadbbagalur.com/kidzee-logo.png",
     "@id": "https://kidzeekiadbbagalur.com/#preschool",
     "url": "https://kidzeekiadbbagalur.com",
     "telephone": "+919611123049",
+    "email": "info@kidzeekiadbbagalur.com",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "58/7, Behind Airports Authority of India Residential Colony, KIADB Bagalur, Huvinayakanahalli",
@@ -73,7 +94,7 @@ export default function RootLayout({
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "13.1492", // Approximate coordinates for Bagalur/Huvinayakanahalli area
+      "latitude": "13.1492",
       "longitude": "77.6714"
     },
     "openingHoursSpecification": {
@@ -96,12 +117,64 @@ export default function RootLayout({
     }
   };
 
+  // Structured Schema for FAQ Page
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What age can my child join?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Children can join our Playgroup from 1.5 years of age. We offer structured kindergarten classes for kids up to 5.5 years, and daycare support for kids aged 1.5 to 8 years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What curriculum does Kidzee follow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We follow Kidzee's proprietary, scientific PéNTEMiND pedagogy. It is designed to stimulate brain development across five essential domains: Inventive, Analytical, Empathetic, Conscientious, and Creative minds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide daycare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide full-day and half-day premium daycare facilities. Our day care features sanitized nap areas, homework guidance, indoor play, and nannies trained in infant care and safety."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can parents visit the campus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! We encourage parents to visit our campus behind the Airports Authority of India Residential Colony, KIADB Bagalur. Visits are scheduled by booking online or calling our team."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do admissions work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Admissions are open year-round based on slot availability. You can submit an enquiry via our Contact Form, schedule a short campus tour, submit the child's documentation, and finalize registration."
+        }
+      }
+    ]
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(preschoolSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
       <body className={`${fredoka.variable} ${nunito.variable} font-nunito text-brand-dark bg-white antialiased`}>

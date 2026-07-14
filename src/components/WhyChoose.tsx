@@ -4,43 +4,44 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Award, ShieldAlert, Heart, Activity } from "lucide-react";
+import { IMAGES } from "@/config/images";
 
 export default function WhyChoose() {
   const cards = [
     {
-      title: "Holistic Learning",
-      description: "Fostering all-round development through academics, creativity, play, and core life skills.",
+      title: "ILLUME Pedagogy",
+      description: "A scientifically designed curriculum for holistic development.",
       icon: <Activity className="w-6 h-6 text-[#AF52DE]" />,
       iconBg: "bg-[#AF52DE]/10",
       maskClass: "mask-square",
-      image: "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&w=350&h=350&q=80",
+      image: IMAGES.whyChoose.illume,
       borderCol: "border-[#AF52DE]/20",
     },
     {
       title: "Expert Educators",
-      description: "Experienced, caring, and passionate teachers helping every child discover their full potential.",
+      description: "Experienced, ECCE-certified teachers helping kids discover their full potential.",
       icon: <Heart className="w-6 h-6 text-[#FF3B30]" />,
       iconBg: "bg-[#FF3B30]/10",
       maskClass: "mask-circle",
-      image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=350&h=350&q=80",
+      image: IMAGES.whyChoose.educator,
       borderCol: "border-[#FF3B30]/20",
     },
     {
-      title: "Safe Campus",
-      description: "Child-friendly classrooms with modern security protocols, fire safety, and sanitization standards.",
+      title: "Safe & Caring Environment",
+      description: "Child safety and comfort are our highest priorities.",
       icon: <ShieldAlert className="w-6 h-6 text-[#34C759]" />,
       iconBg: "bg-[#34C759]/10",
       maskClass: "mask-tilted",
-      image: "https://images.unsplash.com/photo-1595250933300-899072678c90?auto=format&fit=crop&w=350&h=350&q=80",
+      image: IMAGES.whyChoose.safe,
       borderCol: "border-[#34C759]/20",
     },
     {
-      title: "Creative Learning",
-      description: "Hands-on play activities that build confidence, curiosity, and a lifelong imagination.",
+      title: "Confidence & Independence",
+      description: "Kids become more confident in expressing themselves.",
       icon: <Award className="w-6 h-6 text-brand-yellow" />,
       iconBg: "bg-brand-yellow/10",
       maskClass: "mask-triangle",
-      image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=350&h=350&q=80",
+      image: IMAGES.whyChoose.confidence,
       borderCol: "border-brand-yellow/20",
     },
   ];

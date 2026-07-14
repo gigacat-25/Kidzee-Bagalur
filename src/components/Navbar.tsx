@@ -3,10 +3,13 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,31 +24,36 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "About Us", href: "#about" },
-    { label: "Programmes", href: "#programmes" },
-    { label: "Pentemind", href: "#pentemind" },
-    { label: "Admissions", href: "#admissions" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Locate Us", href: "#contact" },
+    { label: "Home", href: "/#home" },
+    { label: "About Us", href: "/#about" },
+    { label: "Programmes", href: "/#programmes" },
+    { label: "Pentemind", href: "/#pentemind" },
+    { label: "Admissions", href: "/#admissions" },
+    { label: "Gallery", href: "/#gallery" },
+    { label: "Reviews", href: "/#reviews" },
+    { label: "Locate Us", href: "/#contact" },
   ];
 
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    setIsOpen(false);
-    const target = document.querySelector(id);
-    if (target) {
-      const offset = 80; // height of navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = target.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      setIsOpen(false);
+      const targetId = href.replace("/", ""); // converts "/#about" to "#about"
+      const target = document.querySelector(targetId);
+      if (target) {
+        const offset = 80; // height of navbar
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = target.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    } else {
+      setIsOpen(false);
     }
   };
 
@@ -59,7 +67,7 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between">
         {/* Playful Colorful Kidzee Logo */}
-        <a href="#home" className="flex items-center gap-2 cursor-pointer select-none">
+        <Link href="/#home" onClick={(e) => handleScrollTo(e, "/#home")} className="flex items-center gap-2 cursor-pointer select-none">
           <Image
             src="/kidzee-logo.png"
             alt="Kidzee Logo"
@@ -71,31 +79,31 @@ export default function Navbar() {
           <span className="text-white/80 font-fredoka text-xs md:text-sm font-medium self-end mb-0.5 hidden sm:inline">
             KIADB Bagalur
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-6">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               onClick={(e) => handleScrollTo(e, item.href)}
               className="text-white hover:text-brand-yellow text-sm font-semibold tracking-wide transition-colors duration-200"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* CTA Admission Button (Desktop) */}
         <div className="hidden lg:block">
-          <a
-            href="#admissions"
-            onClick={(e) => handleScrollTo(e, "#admissions")}
+          <Link
+            href="/#admissions"
+            onClick={(e) => handleScrollTo(e, "/#admissions")}
             className="flex items-center gap-1 px-5 py-2.5 bg-brand-yellow text-brand-purple font-fredoka font-bold rounded-full shadow-md text-sm hover:scale-105 active:scale-95 transition-transform duration-200"
           >
             Admissions Open <ArrowUpRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
 
         {/* Hamburger Icon */}
@@ -112,22 +120,22 @@ export default function Navbar() {
       {isOpen && (
         <div className="lg:hidden mt-4 bg-brand-purple border-t border-brand-yellow/30 pt-4 pb-2 rounded-3xl flex flex-col gap-3 px-2">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               onClick={(e) => handleScrollTo(e, item.href)}
               className="text-white hover:text-brand-yellow text-base font-semibold py-2 px-4 rounded-xl hover:bg-white/10 transition-colors"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#admissions"
-            onClick={(e) => handleScrollTo(e, "#admissions")}
+          <Link
+            href="/#admissions"
+            onClick={(e) => handleScrollTo(e, "/#admissions")}
             className="mt-2 text-center py-3 bg-brand-yellow text-brand-purple font-fredoka font-bold rounded-full shadow-lg flex items-center justify-center gap-1"
           >
             Admissions Open <ArrowUpRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       )}
     </nav>

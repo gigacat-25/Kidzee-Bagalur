@@ -1,25 +1,33 @@
 /**
- * Curated high-resolution Unsplash photo assets.
- * These are fully optimized using dynamic query parameters.
+ * Curated high-resolution Kidzee photo assets.
+ * These point to our high-resolution AI generated assets.
  */
 export const IMAGES = {
   // Hero section kids image
-  hero: "https://images.unsplash.com/photo-1603354311397-2d5f3848b937?auto=format&fit=crop&w=1000&h=800&q=85",
+  hero: "/images/about_kids.png",
 
-  // About Section photo (Teacher interacting with kids in a colorful circle)
-  about: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&h=600&q=80",
+  // About Section photo (Nurturing kid)
+  about: "/images/nurturing_kid.png",
 
   // Program images
   programs: {
-    playgroup: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&h=450&q=80",
-    nursery: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&h=450&q=80",
-    juniorKg: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&h=450&q=80",
-    seniorKg: "https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&w=600&h=450&q=80",
-    daycare: "https://images.unsplash.com/photo-1595250933300-899072678c90?auto=format&fit=crop&w=600&h=450&q=80",
+    playgroup: "/images/playgroup.png",
+    nursery: "/images/nursery.png",
+    juniorKg: "/images/kindergarten.png",
+    seniorKg: "/images/kindergarten.png",
+    daycare: "/images/daycare.png",
   },
 
   // Daycare banner split section image
-  daycareTeacher: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1000&h=700&q=85",
+  daycareTeacher: "/images/daycare.png",
+
+  // Why choose cards
+  whyChoose: {
+    illume: "/images/illume.png",
+    educator: "/images/nursery.png",
+    safe: "/images/safe_environment.png",
+    confidence: "/images/confidence.png",
+  },
 
   // Gallery grid (6 unique photos representing classroom, sports, art, graduation)
   gallery: [

@@ -3,22 +3,29 @@
 import React from "react";
 import Image from "next/image";
 import { Facebook, Instagram, Youtube, Twitter, Phone, Mail, MapPin } from "lucide-react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Footer() {
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    const target = document.querySelector(id);
-    if (target) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = target.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+  const pathname = usePathname();
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      const targetId = href.replace("/", ""); // converts "/#about" to "#about"
+      const target = document.querySelector(targetId);
+      if (target) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = target.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -44,7 +51,7 @@ export default function Footer() {
           
           {/* Column 1: Company About & Socials */}
           <div className="lg:col-span-4 space-y-5">
-            <a href="#home" onClick={(e) => handleScrollTo(e, "#home")} className="flex items-center gap-2 cursor-pointer">
+            <Link href="/#home" onClick={(e) => handleScrollTo(e, "/#home")} className="flex items-center gap-2 cursor-pointer">
               <Image
                 src="/kidzee-logo.png"
                 alt="Kidzee Logo"
@@ -55,7 +62,7 @@ export default function Footer() {
               <span className="text-white/80 font-fredoka text-sm font-medium self-end mb-0.5 ml-1">
                 KIADB Bagalur
               </span>
-            </a>
+            </Link>
             <p className="text-sm font-semibold text-brand-lavender leading-relaxed">
               Backed by Zee Learn Ltd, Kidzee is the pioneer and trendsetter of Early Childhood Care and Education (ECCE) in India with over 2,500 centres nationwide.
             </p>
@@ -84,13 +91,13 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm font-semibold text-brand-lavender">
               {["Playgroup", "Nursery", "Junior KG", "Senior KG", "Day Care"].map((item) => (
                 <li key={item}>
-                  <a
-                    href="#programmes"
-                    onClick={(e) => handleScrollTo(e, "#programmes")}
+                  <Link
+                    href="/#programmes"
+                    onClick={(e) => handleScrollTo(e, "/#programmes")}
                     className="hover:text-brand-yellow transition-colors"
                   >
                     {item} Class
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -103,20 +110,20 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm font-semibold text-brand-lavender">
               {[
-                { label: "Home", href: "#home" },
-                { label: "About Us", href: "#about" },
-                { label: "Pedagogy", href: "#pentemind" },
-                { label: "Gallery", href: "#gallery" },
-                { label: "Testimonials", href: "#reviews" },
+                { label: "Home", href: "/#home" },
+                { label: "About Us", href: "/#about" },
+                { label: "Pedagogy", href: "/#pentemind" },
+                { label: "Gallery", href: "/#gallery" },
+                { label: "Testimonials", href: "/#reviews" },
               ].map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     onClick={(e) => handleScrollTo(e, link.href)}
                     className="hover:text-brand-yellow transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
