@@ -150,7 +150,17 @@ export default function Testimonials() {
               initial="enter"
               animate="center"
               exit="exit"
-              className="w-full text-center flex flex-col items-center"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.4}
+              onDragEnd={(e, info) => {
+                if (info.offset.x < -50) {
+                  handleNext();
+                } else if (info.offset.x > 50) {
+                  handlePrev();
+                }
+              }}
+              className="w-full text-center flex flex-col items-center cursor-grab active:cursor-grabbing select-none"
             >
               {/* Profile Avatar / Initials */}
               <div className="w-20 h-20 rounded-full border-4 border-white/90 shadow-xl flex items-center justify-center mb-4 overflow-hidden relative select-none">

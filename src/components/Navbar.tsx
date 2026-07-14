@@ -55,7 +55,7 @@ export default function Navbar() {
         isScrolled
           ? "py-3 bg-brand-purple/95 backdrop-blur-md shadow-xl"
           : "py-4 bg-brand-purple"
-      } border border-brand-yellow rounded-full px-6 md:px-8`}
+      } border border-brand-yellow ${isOpen ? "rounded-[32px]" : "rounded-full"} px-6 md:px-8`}
     >
       <div className="flex items-center justify-between">
         {/* Playful Colorful Kidzee Logo */}

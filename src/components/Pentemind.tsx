@@ -210,7 +210,7 @@ export default function Pentemind() {
 
           {/* Right Column: Detailed Explanation Card */}
           <div className="lg:col-span-5">
-            <div className="bg-white rounded-[36px] p-8 shadow-xl border border-brand-lavender relative overflow-hidden h-[330px] sm:h-[300px] md:h-[260px] lg:h-[350px] flex flex-col justify-center">
+            <div className="bg-white rounded-[36px] p-8 shadow-xl border border-brand-lavender relative overflow-hidden min-h-[320px] sm:min-h-[300px] md:min-h-[260px] lg:min-h-[350px] flex flex-col justify-center">
               
               {/* Dynamic Watermark Background Icon */}
               <div className="absolute right-[-20px] bottom-[-20px] opacity-5 text-brand-purple pointer-events-none select-none">

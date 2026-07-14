@@ -100,7 +100,7 @@ export default function Programs() {
         </div>
 
         {/* 5-Column / Responsive wrapping Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 xl:gap-4 justify-center">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 scrollbar-none -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-4 justify-center w-auto">
           {programs.map((prog, idx) => (
             <motion.div
               key={prog.title}
@@ -109,7 +109,7 @@ export default function Programs() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               whileHover={{ y: -8 }}
-              className="bg-white rounded-[32px] overflow-hidden border-2 border-brand-lavender hover:border-brand-purple/20 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              className="bg-white rounded-[32px] overflow-hidden border-2 border-brand-lavender hover:border-brand-purple/20 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full w-[285px] shrink-0 snap-center md:w-auto md:shrink"
             >
               {/* Top Image Container */}
               <div className="relative h-44 w-full overflow-hidden">

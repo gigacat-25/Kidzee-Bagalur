@@ -16,15 +16,15 @@ export default function Gallery() {
     setLightboxIdx(null);
   };
 
-  const showPrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const showPrev = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     if (lightboxIdx !== null) {
       setLightboxIdx((lightboxIdx - 1 + IMAGES.gallery.length) % IMAGES.gallery.length);
     }
   };
 
-  const showNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const showNext = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     if (lightboxIdx !== null) {
       setLightboxIdx((lightboxIdx + 1) % IMAGES.gallery.length);
     }
@@ -109,24 +109,35 @@ export default function Gallery() {
             {/* Left Control Arrow */}
             <button
               onClick={showPrev}
-              className="absolute left-4 sm:left-6 text-white hover:text-brand-yellow p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all z-50 focus:outline-none"
+              className="absolute left-2 sm:left-6 text-white hover:text-brand-yellow p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all z-50 focus:outline-none"
               aria-label="Previous Image"
             >
-              <ChevronLeft className="w-8 h-8" />
+              <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
 
             {/* Lightbox Content Area */}
             <motion.div
+              key={lightboxIdx}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.5}
+              onDragEnd={(e, info) => {
+                if (info.offset.x < -50) {
+                  showNext();
+                } else if (info.offset.x > 50) {
+                  showPrev();
+                }
+              }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-4xl max-h-[80vh] flex flex-col items-center z-40"
+              className="relative max-w-4xl max-h-[85vh] flex flex-col items-center z-40 cursor-grab active:cursor-grabbing select-none px-4"
             >
               <img
                 src={IMAGES.gallery[lightboxIdx].url}
                 alt={IMAGES.gallery[lightboxIdx].title}
-                className="max-w-full max-h-[72vh] object-contain rounded-2xl border-4 border-white shadow-2xl"
+                className="max-w-full max-h-[65vh] object-contain rounded-2xl border-4 border-white shadow-2xl pointer-events-none"
               />
               <div className="mt-4 text-center">
                 <span className="text-brand-yellow font-fredoka font-bold text-xs uppercase tracking-widest">
@@ -141,10 +152,10 @@ export default function Gallery() {
             {/* Right Control Arrow */}
             <button
               onClick={showNext}
-              className="absolute right-4 sm:right-6 text-white hover:text-brand-yellow p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all z-50 focus:outline-none"
+              className="absolute right-2 sm:right-6 text-white hover:text-brand-yellow p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all z-50 focus:outline-none"
               aria-label="Next Image"
             >
-              <ChevronRight className="w-8 h-8" />
+              <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
           </motion.div>
         )}
