@@ -222,7 +222,7 @@ export default function Pentemind() {
                   key={activeMind}
                   initial={{ opacity: 0, x: 15 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: -15, y: -10 }}
+                  exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex items-center gap-3 mb-4">

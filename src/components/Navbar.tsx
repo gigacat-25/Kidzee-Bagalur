@@ -36,21 +36,26 @@ export default function Navbar() {
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (pathname === "/") {
-      e.preventDefault();
       setIsOpen(false);
-      const targetId = href.replace("/", ""); // converts "/#about" to "#about"
-      const target = document.querySelector(targetId);
-      if (target) {
-        const offset = 80; // height of navbar
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = target.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
+      if (!href || !href.includes("#")) return;
+      const hash = href.substring(href.indexOf("#"));
+      if (!hash || hash === "#") return;
+      try {
+        const target = document.querySelector(hash);
+        if (target) {
+          e.preventDefault();
+          const offset = 80; // height of navbar
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = target.getBoundingClientRect().top;
+          const offsetPosition = elementRect - bodyRect - offset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      } catch (err) {
+        console.error("Scroll error:", err);
       }
     } else {
       setIsOpen(false);
