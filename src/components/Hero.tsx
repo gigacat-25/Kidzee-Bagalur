@@ -141,7 +141,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-4xl sm:text-5xl md:text-6xl text-white font-fredoka font-bold leading-tight tracking-wide mb-6"
           >
-            Nurturing Young Minds for a <span className="text-brand-yellow">Brighter Tomorrow</span>
+            Kidzee KIADB Bagalur: <span className="text-brand-yellow">Best Preschool & Day Care</span> in Huvinayakanahalli
           </motion.h1>
 
           {/* Subheading */}
@@ -149,7 +149,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-base sm:text-lg md:text-xl text-brand-lavender font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8"
           >
-            Premium preschool where learning begins through creativity, exploration, confidence and care. Give your child the Kidzee advantage.
+            Nurturing young minds through creative exploration, safety, and Zee Learn’s PéNTEMiND pedagogy. Give your child the premier Kidzee advantage near Aerospace Park, Bengaluru.
           </motion.p>
 
           {/* Action Buttons */}

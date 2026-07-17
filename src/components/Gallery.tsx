@@ -52,21 +52,21 @@ export default function Gallery() {
             <span>AUTHENTIC KIDZEE BAGALUR PHOTOS</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-brand-purple font-fredoka font-bold mb-4">
-            Our Campus Gallery
+            Kidzee KIADB Bagalur Campus Gallery
           </h2>
           <p className="text-base sm:text-lg text-brand-dark/70 font-semibold">
-            Take a look inside Kidzee KIADB Bagalur - vibrant classrooms, play zones, learning activities, and joyful moments.
+            Take a look inside Kidzee KIADB Bagalur - vibrant classrooms, play zones, learning activities, and joyful moments in Huvinayakanahalli.
           </p>
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          <div className="hidden sm:flex items-center gap-1 text-xs font-bold text-brand-purple/60 mr-2">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+          <div className="hidden sm:flex items-center gap-1.5 mr-2 text-brand-purple/60 text-xs font-bold">
             <Filter className="w-3.5 h-3.5" />
             <span>Filter:</span>
           </div>
           {categories.map((category) => {
-            const isActive = activeCategory === category;
+            const isSelected = activeCategory === category;
             return (
               <button
                 key={category}
@@ -74,8 +74,8 @@ export default function Gallery() {
                   setActiveCategory(category);
                   setLightboxIdx(null);
                 }}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold font-fredoka transition-all duration-300 ${
-                  isActive
+                className={`px-4 py-2 rounded-full font-fredoka font-bold text-xs sm:text-sm transition-all duration-200 cursor-pointer ${
+                  isSelected
                     ? "bg-brand-purple text-white shadow-md scale-105"
                     : "bg-white/80 text-brand-purple/80 hover:bg-white hover:text-brand-purple hover:shadow-sm"
                 }`}
@@ -102,7 +102,7 @@ export default function Gallery() {
               {/* Image element with thumbnail fallback */}
               <img
                 src={photo.thumb || photo.url}
-                alt={photo.title}
+                alt={`Kidzee KIADB Bagalur ${photo.title} - ${photo.category} in Huvinayakanahalli`}
                 loading="lazy"
                 onError={(e) => {
                   e.currentTarget.src = photo.url;

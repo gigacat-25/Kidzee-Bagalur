@@ -15,8 +15,9 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Kidzee KIADB Bagalur | Best Preschool & Day Care in Huvinayakanahalli, Bengaluru",
-  description: "Kidzee Preschool KIADB Bagalur (Huvinayakanahalli) offers premium early childhood education, playgroup, nursery, kindergarten, and day care facilities with a 4.9⭐ rating. Secure, child-centric learning environment.",
+  metadataBase: new URL("https://kidzeekiadbbagalur.com"),
+  title: "Kidzee KIADB Bagalur | Best Preschool & Day Care in Huvinayakanahalli",
+  description: "Kidzee Preschool KIADB Bagalur (Huvinayakanahalli) offers premium early childhood education, Playgroup, Nursery, Kindergarten, and Daycare with 4.9⭐ rating.",
   keywords: [
     "Kidzee KIADB Bagalur",
     "Preschool in Huvinayakanahalli",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     "Pre Nursery School in Bagalur",
     "Kindergarten in Huvinayakanahalli",
     "Daycare near KIADB Aerospace Park",
-    "Kidzee Admissions 2026",
+    "Kidzee Admissions 2026-27",
     "Zee Learn Bagalur",
     "Early childhood education Bagalur"
   ],
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     canonical: "https://kidzeekiadbbagalur.com",
   },
   openGraph: {
-    title: "Kidzee KIADB Bagalur | Best Preschool & Day Care in Huvinayakanahalli, Bengaluru",
+    title: "Kidzee KIADB Bagalur | Best Preschool & Day Care in Huvinayakanahalli",
     description: "Kidzee Preschool KIADB Bagalur (Huvinayakanahalli) offers premium early childhood education, playgroup, nursery, kindergarten, and day care facilities with a 4.9⭐ rating.",
     url: "https://kidzeekiadbbagalur.com",
     siteName: "Kidzee KIADB Bagalur",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
         url: "https://kidzeekiadbbagalur.com/images/about_kids.png",
         width: 1200,
         height: 630,
-        alt: "Kidzee KIADB Bagalur Preschool",
+        alt: "Kidzee KIADB Bagalur Preschool Campus",
       },
     ],
     locale: "en_IN",
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kidzee KIADB Bagalur | Best Preschool & Day Care in Huvinayakanahalli, Bengaluru",
+    title: "Kidzee KIADB Bagalur | Best Preschool & Day Care in Huvinayakanahalli",
     description: "Kidzee Preschool KIADB Bagalur (Huvinayakanahalli) offers premium early childhood education, playgroup, nursery, kindergarten, and day care facilities with a 4.9⭐ rating.",
     images: ["https://kidzeekiadbbagalur.com/images/about_kids.png"],
   },
@@ -77,11 +78,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Structured Schema for local preschool
+  // Structured Schema for local preschool & educational organization
   const preschoolSchema = {
     "@context": "https://schema.org",
-    "@type": "Preschool",
+    "@type": ["Preschool", "EducationalOrganization", "LocalBusiness"],
     "name": "Kidzee KIADB Bagalur",
+    "legalName": "Kidzee Preschool KIADB Bagalur Huvinayakanahalli",
     "image": "https://kidzeekiadbbagalur.com/images/about_kids.png",
     "logo": "https://kidzeekiadbbagalur.com/kidzee-logo.png",
     "@id": "https://kidzeekiadbbagalur.com/#preschool",
@@ -89,6 +91,11 @@ export default function RootLayout({
     "telephone": "+919611123049",
     "email": "info@kidzeekiadbbagalur.com",
     "priceRange": "$$",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Zee Learn Ltd - Kidzee",
+      "url": "https://www.kidzee.com"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "58/7, Behind Airports Authority of India Residential Colony, KIADB Bagalur, Huvinayakanahalli",
@@ -119,6 +126,52 @@ export default function RootLayout({
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "36"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Preschool & Daycare Programs",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Course",
+            "name": "Playgroup",
+            "description": "Exploration-based early learning for toddlers aged 1.5 to 2.5 years."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Course",
+            "name": "Nursery",
+            "description": "Foundation for literacy, numeracy, and social skills for ages 2.5 to 3.5 years."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Course",
+            "name": "Junior KG",
+            "description": "Structured learning, phonics, and motor skill development for ages 3.5 to 4.5 years."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Course",
+            "name": "Senior KG",
+            "description": "Primary school readiness curriculum for children aged 4.5 to 5.5 years."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Day Care",
+            "description": "Safe, hygienic, and nurturing daycare facility for children aged 1.5 to 8 years."
+          }
+        }
+      ]
     }
   };
 
@@ -129,7 +182,7 @@ export default function RootLayout({
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What age can my child join?",
+        "name": "What age can my child join Kidzee KIADB Bagalur?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Children can join our Playgroup from 1.5 years of age. We offer structured kindergarten classes for kids up to 5.5 years, and daycare support for kids aged 1.5 to 8 years."
@@ -137,7 +190,7 @@ export default function RootLayout({
       },
       {
         "@type": "Question",
-        "name": "What curriculum does Kidzee follow?",
+        "name": "What curriculum does Kidzee Bagalur follow?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "We follow Kidzee's proprietary, scientific PéNTEMiND pedagogy. It is designed to stimulate brain development across five essential domains: Inventive, Analytical, Empathetic, Conscientious, and Creative minds."
@@ -145,23 +198,23 @@ export default function RootLayout({
       },
       {
         "@type": "Question",
-        "name": "Do you provide daycare?",
+        "name": "Do you provide daycare near KIADB Aerospace Park?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we provide full-day and half-day premium daycare facilities. Our day care features sanitized nap areas, homework guidance, indoor play, and nannies trained in infant care and safety."
+          "text": "Yes, we provide full-day and half-day premium daycare facilities near KIADB Aerospace Park & Huvinayakanahalli. Our daycare features sanitized nap areas, homework guidance, indoor play, and trained nannies."
         }
       },
       {
         "@type": "Question",
-        "name": "Can parents visit the campus?",
+        "name": "Can parents visit the Kidzee Bagalur campus?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! We encourage parents to visit our campus behind the Airports Authority of India Residential Colony, KIADB Bagalur. Visits are scheduled by booking online or calling our team."
+          "text": "Absolutely! We encourage parents to visit our campus located behind the Airports Authority of India Residential Colony, KIADB Bagalur. Visits are scheduled by booking online or calling +91 9611123049."
         }
       },
       {
         "@type": "Question",
-        "name": "How do admissions work?",
+        "name": "How do admissions work for the 2026-27 academic session?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Admissions are open year-round based on slot availability. You can submit an enquiry via our Contact Form, schedule a short campus tour, submit the child's documentation, and finalize registration."

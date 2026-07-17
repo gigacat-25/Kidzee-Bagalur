@@ -55,7 +55,7 @@ export default function About() {
               <div className="absolute inset-6 overflow-hidden blob-shape-1 border-4 border-white shadow-2xl z-10">
                 <Image
                   src={IMAGES.about}
-                  alt="Teacher reading to children at Kidzee KIADB Bagalur"
+                  alt="Certified teacher interacting with toddlers at Kidzee KIADB Bagalur preschool in Huvinayakanahalli"
                   fill
                   sizes="(max-width: 640px) 250px, (max-width: 768px) 350px, 400px"
                   className="object-cover object-center"
@@ -83,22 +83,22 @@ export default function About() {
           >
             <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-lavender text-brand-purple rounded-full text-xs font-bold w-fit mb-4">
               <Bookmark className="w-3.5 h-3.5" />
-              <span>OVER 2 DECADES OF TRUST</span>
+              <span>OVER 2 DECADES OF EXCELLENCE</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl text-brand-purple font-fredoka font-bold mb-6">
-              Welcome to Kidzee Preschool
+              Welcome to Kidzee KIADB Bagalur
             </h2>
 
             <div className="space-y-4 text-brand-dark/80 text-base sm:text-lg leading-relaxed">
               <p>
-                Kidzee Preschool is a leading chain of preschools located in India and Nepal, backed by the prestigious <strong>Zee Learn Ltd</strong>.
+                Located in Huvinayakanahalli near KIADB Aerospace Park, <strong>Kidzee KIADB Bagalur</strong> is a premier center of India’s leading preschool network backed by <strong>Zee Learn Ltd</strong>.
               </p>
               <p>
-                With more than two decades of experience in the early childhood care and education industry, Kidzee has nurtured and educated more than <strong>1.5 million students</strong> across India, preparing them for a confident future.
+                With over two decades of pioneer experience in Early Childhood Care and Education (ECCE), Kidzee has nurtured over <strong>1.5 million children</strong> across 2,500+ centers nationwide, providing a joyful, safe, and engaging foundation.
               </p>
               <p>
-                Being one of the largest preschool brands in the country, Kidzee operates over <strong>2,500 centres across 600+ cities</strong>, delivering standardized, world-class learning frameworks.
+                Our Bagalur campus offers modern, child-friendly facilities, certified educators, and a structured learning framework tailored for playgroup, nursery, kindergarten, and daycare children.
               </p>
             </div>
 

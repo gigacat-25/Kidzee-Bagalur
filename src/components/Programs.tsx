@@ -92,10 +92,10 @@ export default function Programs() {
             <span>KIDZEE PROGRAMMES</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-brand-purple font-fredoka font-bold mb-4">
-            Our Learning Programmes
+            Kidzee KIADB Bagalur Learning Programs
           </h2>
           <p className="text-base sm:text-lg text-brand-dark/70 font-semibold">
-            Pedagogies tailored for each age group to build exploration, care, and confidence.
+            Age-tailored ECCE curriculum designed to nurture exploration, confidence, and foundational learning in Huvinayakanahalli.
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export default function Programs() {
               <div className="relative h-44 w-full overflow-hidden">
                 <Image
                   src={prog.image}
-                  alt={prog.title}
+                  alt={`Kidzee KIADB Bagalur ${prog.title} Program in Huvinayakanahalli`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 250px"
                   className="object-cover object-center transition-transform duration-500 hover:scale-110"
