@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, MapPin, Mail, CheckCircle, Send } from "lucide-react";
+import { Phone, MapPin, Mail, CheckCircle, Send, ExternalLink } from "lucide-react";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -308,7 +308,7 @@ export default function Contact() {
             <div className="bg-white p-4 rounded-[40px] shadow-lg border border-brand-purple/10 h-[400px] lg:h-[580px] w-full flex flex-col justify-between">
               {/* Responsive Iframe Map */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.2887640498877!2d77.67493187515093!3d13.144171287186982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1d102e3b2e59%3A0xc3c5f4fa891be7c!2sKidzee%20Preschool%20-%20KIADB%20Bagalur%20Huvinayakanahalli!5e0!3m2!1sen!2sin!4v1711200000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.225134707248!2d77.6883122!3d13.1452555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1b17af47f597%3A0xb2afc00f2e243aab!2sKIDZEE%20-%20KIADB!5e0!3m2!1sen!2sin!4v1711200000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0, borderRadius: "28px" }}
@@ -322,15 +322,19 @@ export default function Contact() {
               <div className="mt-4 px-2 flex items-center justify-between">
                 <div>
                   <h3 className="font-fredoka font-bold text-sm text-brand-purple">Kidzee KIADB Bagalur</h3>
-                  <p className="text-xs text-brand-dark/65 font-bold mt-0.5">Huvinayakanahalli, Bengaluru</p>
+                  <p className="text-xs text-brand-dark/65 font-bold mt-0.5">58/7, Behind AAIRC, KIADB Bagalur, Huvinayakanahalli</p>
                 </div>
                 
-                {/* Micro Rating Indicator */}
-                <div className="flex items-center gap-1 bg-brand-yellow/20 px-3 py-1 rounded-full text-brand-purple text-xs font-bold border border-brand-yellow/30">
-                  <span>4.9</span>
-                  <span className="text-[#FFD400]">★</span>
-                  <span className="text-[10px] text-brand-dark/50">(36 Reviews)</span>
-                </div>
+                {/* Direct Google Maps Link */}
+                <a
+                  href="https://maps.app.goo.gl/41LAkU94TZUYVx8LA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 bg-brand-purple hover:bg-brand-purple/90 text-white px-3 py-1.5 rounded-full text-xs font-fredoka font-bold shadow-sm transition-all hover:scale-105"
+                >
+                  <span>Open Map</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             </div>
           </div>

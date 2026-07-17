@@ -41,12 +41,12 @@ export default function GoogleRating() {
 
           {/* Call-to-action button */}
           <a
-            href="https://maps.google.com/?q=Kidzee+Preschool+KIADB+Bagalur"
+            href="https://maps.app.goo.gl/41LAkU94TZUYVx8LA"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-purple hover:bg-brand-purple/95 text-white font-fredoka font-bold text-base rounded-full shadow-lg hover:scale-105 active:scale-95 transition-transform duration-200"
           >
-            <span>View on Google Reviews</span>
+            <span>View on Google Maps</span>
             <ExternalLink className="w-4 h-4" />
           </a>
         </motion.div>

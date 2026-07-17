@@ -65,6 +65,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/kidzee-logo.png",
+    shortcut: "/kidzee-logo.png",
+    apple: "/kidzee-logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -166,7 +171,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -177,7 +182,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
-      <body className={`${fredoka.variable} ${nunito.variable} font-nunito text-brand-dark bg-white antialiased`}>
+      <body className={`${fredoka.variable} ${nunito.variable} font-nunito text-brand-dark bg-white antialiased`} suppressHydrationWarning>
         {children}
       </body>
     </html>

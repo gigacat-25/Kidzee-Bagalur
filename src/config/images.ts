@@ -1,65 +1,211 @@
 /**
- * Curated high-resolution Kidzee photo assets.
- * These point to our high-resolution AI generated assets.
+ * Curated high-resolution photorealistic AI classroom photography & campus assets.
  */
-export const IMAGES = {
-  // Hero section kids image
-  hero: "/images/about_kids.png",
 
-  // About Section photo (Nurturing kid)
+export interface GalleryPhoto {
+  url: string;
+  thumb: string;
+  title: string;
+  category: string;
+  orientation?: "landscape" | "portrait" | string;
+}
+
+export const IMAGES = {
+  // Hero section image (Kidzee uniform branded realistic photo)
+  hero: "/images/kidzee_hero_kids.png",
+
+  // About Section photo (Realistic teacher & children photography)
   about: "/images/nurturing_kid.png",
 
-  // Program images
+  // Program images (High-resolution photorealistic AI classroom photography for each program)
   programs: {
     playgroup: "/images/playgroup.png",
     nursery: "/images/nursery.png",
     juniorKg: "/images/kindergarten.png",
-    seniorKg: "/images/kindergarten.png",
-    daycare: "/images/daycare.png",
+    seniorKg: "/images/senior_kg.png",
+    daycare: "/images/daycare_teacher.png",
   },
 
-  // Daycare banner split section image
-  daycareTeacher: "/images/daycare.png",
+  // Daycare banner split section image (Teacher in green saree playing shape-sorter blocks with toddlers)
+  daycareTeacher: "/images/daycare_teacher.png",
 
-  // Why choose cards
+  // Why choose cards / Facilities (Photorealistic AI classroom photography)
   whyChoose: {
-    illume: "/images/illume.png",
+    illume: "/images/why_illume.png",
     educator: "/images/nursery.png",
     safe: "/images/safe_environment.png",
     confidence: "/images/confidence.png",
   },
 
-  // Gallery grid (6 unique photos representing classroom, sports, art, graduation)
+  // Gallery grid displaying authentic real Kidzee KIADB Bagalur campus photos from Drive
   gallery: [
     {
-      url: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&h=500&q=80",
-      title: "Creative Art Class",
-      category: "Activities"
+      url: "/photos/photo_02.jpg",
+      thumb: "/photos/thumbs/photo_02.jpg",
+      title: "Kidzee Campus Entrance & Welcome",
+      category: "Campus Life",
+      orientation: "landscape"
     },
     {
-      url: "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&w=600&h=500&q=80",
-      title: "Sensory Toys & Blocks",
-      category: "Learning"
+      url: "/photos/photo_03.jpg",
+      thumb: "/photos/thumbs/photo_03.jpg",
+      title: "Spacious Learning Environment",
+      category: "Classroom",
+      orientation: "landscape"
     },
     {
-      url: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&h=500&q=80",
-      title: "Playground & Sports",
-      category: "Outdoors"
+      url: "/photos/photo_07.jpg",
+      thumb: "/photos/thumbs/photo_07.jpg",
+      title: "Interactive Toy & Puzzle Zone",
+      category: "Activities",
+      orientation: "portrait"
     },
     {
-      url: "https://images.unsplash.com/photo-1537655780520-1e392edd816a?auto=format&fit=crop&w=600&h=500&q=80",
-      title: "Music & Rhyme Time",
-      category: "Activities"
+      url: "/photos/photo_09.jpg",
+      thumb: "/photos/thumbs/photo_09.jpg",
+      title: "Early Childhood Learning Desk",
+      category: "Classroom",
+      orientation: "portrait"
     },
     {
-      url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&h=500&q=80",
-      title: "Early Literacy & Reading",
-      category: "Learning"
+      url: "/photos/photo_12.jpg",
+      thumb: "/photos/thumbs/photo_12.jpg",
+      title: "Creative Arts & Craft Corner",
+      category: "Activities",
+      orientation: "portrait"
     },
     {
-      url: "https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?auto=format&fit=crop&w=600&h=500&q=80",
-      title: "Fun & Friendship",
-      category: "Classroom"
+      url: "/photos/photo_15.jpg",
+      thumb: "/photos/thumbs/photo_15.jpg",
+      title: "Montessori Sensory Equipment",
+      category: "Learning",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_21.jpg",
+      thumb: "/photos/thumbs/photo_21.jpg",
+      title: "Supervised Daycare Play Area",
+      category: "Daycare",
+      orientation: "landscape"
+    },
+    {
+      url: "/photos/photo_22.jpg",
+      thumb: "/photos/thumbs/photo_22.jpg",
+      title: "Group Learning & Storytelling",
+      category: "Classroom",
+      orientation: "landscape"
+    },
+    {
+      url: "/photos/photo_23.jpg",
+      thumb: "/photos/thumbs/photo_23.jpg",
+      title: "Nurturing Teacher Guidance",
+      category: "Campus Life",
+      orientation: "landscape"
+    },
+    {
+      url: "/photos/photo_24.jpg",
+      thumb: "/photos/thumbs/photo_24.jpg",
+      title: "PENTEMIND & Illume Learning Lab",
+      category: "Learning",
+      orientation: "landscape"
+    },
+    {
+      url: "/photos/photo_25.jpg",
+      thumb: "/photos/thumbs/photo_25.jpg",
+      title: "Outdoor Play & Sports Zone",
+      category: "Outdoors",
+      orientation: "landscape"
+    },
+    {
+      url: "/photos/photo_28.jpg",
+      thumb: "/photos/thumbs/photo_28.jpg",
+      title: "Bright & Child-Friendly Classroom",
+      category: "Classroom",
+      orientation: "landscape"
+    },
+    {
+      url: "/photos/photo_32.jpg",
+      thumb: "/photos/thumbs/photo_32.jpg",
+      title: "Safe & Sanitized Activity Space",
+      category: "Campus Life",
+      orientation: "landscape"
+    },
+    {
+      url: "/photos/photo_01.jpg",
+      thumb: "/photos/thumbs/photo_01.jpg",
+      title: "Kidzee Mascot & Welcome Wall",
+      category: "Campus Life",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_04.jpg",
+      thumb: "/photos/thumbs/photo_04.jpg",
+      title: "Building Blocks & Motor Skills",
+      category: "Activities",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_08.jpg",
+      thumb: "/photos/thumbs/photo_08.jpg",
+      title: "Rhyme & Music Corner",
+      category: "Activities",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_11.jpg",
+      thumb: "/photos/thumbs/photo_11.jpg",
+      title: "Phonics & Language Skill Wall",
+      category: "Learning",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_14.jpg",
+      thumb: "/photos/thumbs/photo_14.jpg",
+      title: "Maths & Number Fun Desk",
+      category: "Learning",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_17.jpg",
+      thumb: "/photos/thumbs/photo_17.jpg",
+      title: "Fine Motor Skills & Drawing",
+      category: "Activities",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_20.jpg",
+      thumb: "/photos/thumbs/photo_20.jpg",
+      title: "Kidzee Library & Story Books",
+      category: "Learning",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_26.jpg",
+      thumb: "/photos/thumbs/photo_26.jpg",
+      title: "Physical Activity & Balance Fun",
+      category: "Outdoors",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_29.jpg",
+      thumb: "/photos/thumbs/photo_29.jpg",
+      title: "Celebration & Event Decorations",
+      category: "Events",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_31.jpg",
+      thumb: "/photos/thumbs/photo_31.jpg",
+      title: "Festive Campus Celebrations",
+      category: "Events",
+      orientation: "portrait"
+    },
+    {
+      url: "/photos/photo_51.jpg",
+      thumb: "/photos/thumbs/photo_51.jpg",
+      title: "Fun Time with Friends",
+      category: "Campus Life",
+      orientation: "portrait"
     }
-  ]
+  ] as GalleryPhoto[]
 };

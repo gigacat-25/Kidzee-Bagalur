@@ -13,36 +13,36 @@ export default function WhyChoose() {
       description: "A scientifically designed curriculum for holistic development.",
       icon: <Activity className="w-6 h-6 text-[#AF52DE]" />,
       iconBg: "bg-[#AF52DE]/10",
-      maskClass: "mask-square",
+      shapeClass: "rounded-[28px]",
+      borderCol: "border-[#AF52DE]/30",
       image: IMAGES.whyChoose.illume,
-      borderCol: "border-[#AF52DE]/20",
     },
     {
       title: "Expert Educators",
       description: "Experienced, ECCE-certified teachers helping kids discover their full potential.",
       icon: <Heart className="w-6 h-6 text-[#FF3B30]" />,
       iconBg: "bg-[#FF3B30]/10",
-      maskClass: "mask-circle",
+      shapeClass: "rounded-full",
+      borderCol: "border-[#FF3B30]/30",
       image: IMAGES.whyChoose.educator,
-      borderCol: "border-[#FF3B30]/20",
     },
     {
       title: "Safe & Caring Environment",
       description: "Child safety and comfort are our highest priorities.",
       icon: <ShieldAlert className="w-6 h-6 text-[#34C759]" />,
       iconBg: "bg-[#34C759]/10",
-      maskClass: "mask-tilted",
+      shapeClass: "blob-shape-1",
+      borderCol: "border-[#34C759]/30",
       image: IMAGES.whyChoose.safe,
-      borderCol: "border-[#34C759]/20",
     },
     {
       title: "Confidence & Independence",
       description: "Kids become more confident in expressing themselves.",
       icon: <Award className="w-6 h-6 text-brand-yellow" />,
-      iconBg: "bg-brand-yellow/10",
-      maskClass: "mask-triangle",
+      iconBg: "bg-brand-yellow/20",
+      shapeClass: "blob-shape-2",
+      borderCol: "border-brand-yellow/40",
       image: IMAGES.whyChoose.confidence,
-      borderCol: "border-brand-yellow/20",
     },
   ];
 
@@ -89,28 +89,18 @@ export default function WhyChoose() {
               className="bg-white p-6 rounded-[32px] border-2 border-transparent hover:border-brand-purple/10 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center"
             >
               {/* Shaped Mask Image container */}
-              <div className="relative w-36 h-36 mb-6 flex items-center justify-center">
-                {/* Colored border outline following mask shape */}
-                <div
-                  className={`absolute inset-[-4px] border-2 border-dashed ${card.borderCol} ${
-                    card.maskClass === "mask-square"
-                      ? "rounded-3xl"
-                      : card.maskClass === "mask-circle"
-                      ? "rounded-full"
-                      : card.maskClass === "mask-tilted"
-                      ? "rounded-3xl -rotate-[3deg]"
-                      : "clip-triangle scale-110"
-                  }`}
-                />
+              <div className="relative w-36 h-36 mb-6 flex items-center justify-center p-1">
+                {/* Decorative Dashed Border Ring */}
+                <div className={`absolute inset-0 border-2 border-dashed ${card.borderCol} ${card.shapeClass}`} />
                 
                 {/* Masked Image */}
-                <div className={`relative w-full h-full overflow-hidden ${card.maskClass}`}>
+                <div className={`relative w-full h-full overflow-hidden border-2 border-white shadow-sm ${card.shapeClass}`}>
                   <Image
                     src={card.image}
                     alt={card.title}
                     fill
                     sizes="150px"
-                    className="object-cover object-center"
+                    className="object-cover object-top"
                   />
                 </div>
               </div>

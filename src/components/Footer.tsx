@@ -137,9 +137,14 @@ export default function Footer() {
             <ul className="space-y-3.5 text-sm font-semibold text-brand-lavender">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 shrink-0 text-brand-yellow mt-0.5" />
-                <span className="leading-relaxed">
-                  58/7, Behind Airports Authority of India Residential Colony, KIADB Bagalur, Huvinayakanahalli, Bengaluru, 562149
-                </span>
+                <a
+                  href="https://maps.app.goo.gl/41LAkU94TZUYVx8LA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="leading-relaxed hover:text-brand-yellow transition-colors"
+                >
+                  58/7, Behind AAIRC KIADB Bagalur, Huvinayakanahalli, Bengaluru, 562149
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-brand-yellow" />
