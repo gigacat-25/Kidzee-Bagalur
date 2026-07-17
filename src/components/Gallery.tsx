@@ -104,6 +104,9 @@ export default function Gallery() {
                 src={photo.thumb || photo.url}
                 alt={photo.title}
                 loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.src = photo.url;
+                }}
                 className="w-full h-auto object-cover rounded-[28px] transition-transform duration-500 group-hover:scale-105"
               />
 
