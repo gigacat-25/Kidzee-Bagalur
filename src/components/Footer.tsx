@@ -169,6 +169,8 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4 text-xs font-semibold text-brand-lavender/65">
           <p>© {new Date().getFullYear()} Kidzee KIADB Bagalur. Backed by Zee Learn. All Rights Reserved.</p>
           <div className="flex gap-4">
+            <a href="/sitemap.xml" target="_blank" className="hover:text-brand-yellow transition-colors">Sitemap</a>
+            <span>•</span>
             <a href="#" className="hover:text-brand-yellow transition-colors">Privacy Policy</a>
             <span>•</span>
             <a href="#" className="hover:text-brand-yellow transition-colors">Terms of Use</a>
